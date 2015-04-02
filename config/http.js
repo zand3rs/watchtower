@@ -21,7 +21,7 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-  // middleware: {
+  middleware: {
 
   /***************************************************************************
   *                                                                          *
@@ -30,34 +30,37 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // order: [
-    //   'startRequestTimer',
-    //   'cookieParser',
-    //   'session',
-    //   'myRequestLogger',
-    //   'bodyParser',
-    //   'handleBodyParserError',
-    //   'compress',
-    //   'methodOverride',
-    //   'poweredBy',
-    //   '$custom',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    //   '404',
-    //   '500'
-    // ],
+    order: [
+      'assetsConfig',
+      'startRequestTimer',
+      'cookieParser',
+      'session',
+      'requestLogger',
+      'miscellaneous',
+      'flashMessage',
+      'bodyParser',
+      'handleBodyParserError',
+      'compress',
+      'methodOverride',
+      'poweredBy',
+      '$custom',
+      'router',
+      'www',
+      'favicon',
+      '404',
+      '500'
+    ],
 
   /****************************************************************************
   *                                                                           *
-  * Example custom middleware; logs each request to the console.              *
+  * Custom middleware                                                         *
   *                                                                           *
   ****************************************************************************/
 
-    // myRequestLogger: function (req, res, next) {
-    //     console.log("Requested :: ", req.method, req.url);
-    //     return next();
-    // }
+    requestLogger   : requestLogger(),
+    miscellaneous   : miscellaneous(),
+    flashMessage    : require("flash")(),
+    assetsConfig    : assetsConfig(),
 
 
   /***************************************************************************
@@ -71,7 +74,7 @@ module.exports.http = {
 
     // bodyParser: require('skipper')
 
-  // },
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -85,3 +88,63 @@ module.exports.http = {
 
   // cache: 31557600000
 };
+
+//==============================================================================
+//-- private...
+
+function requestLogger() {
+  return function(req, res, next) {
+    if (sails.config.environment === "development") {
+      sails.log.verbose("Requested :: ", req.method, req.url);
+    }
+    next();
+  };
+}
+
+//------------------------------------------------------------------------------
+
+function assetsConfig() {
+  return function(req, res, next) {
+    //-- assets version
+    res.locals.assetsVersion = sails.config.assets.version;
+
+    //-- assets base_url
+    res.locals.assetsBaseUrl = sails.config.assets.base_url;
+
+    next();
+  };
+}
+
+//------------------------------------------------------------------------------
+
+function miscellaneous() {
+  return function(req, res, next) {
+    var userAgent = req.headers["user-agent"];
+    var xForwardedProto = req.headers["x-forwarded-proto"];
+    var referer = req.headers["referer"] || "";
+
+    //-- set SSL flag
+    req.usingSSL = /^https$/i.test(xForwardedProto);
+
+    //-- modify base url if using ssl
+    if (req.usingSSL) {
+      req.baseUrl = (req.baseUrl || "").replace("http:", "https:");
+    }
+
+    //-- set referer
+    var pattern = "https?://" + req.host + "(:[0-9]+)?([^?]*)";
+    var match = referer.match(new RegExp(pattern));
+    req.referer = (match) ? match[2] || "/" : referer;
+
+    //-- set isMobile property
+    req.isMobile = /^m\./i.test(req.host) || /opera mini/i.test(userAgent) || !!(req.session.isMobile);
+    if (!req.isMobile) {
+      req.isMobile = req.session.isMobile = (req.query.m === ".");
+    }
+
+    //-- Util
+    res.locals.Util = Util;
+
+    next();
+  };
+}
