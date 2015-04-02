@@ -10,6 +10,10 @@
  * http://sailsjs.org/#/documentation/concepts/Logging
  */
 
+var winston = require("winston");
+winston.default.transports.console.timestamp = true;
+winston.default.transports.console.level = "silly";
+
 module.exports.log = {
 
   /***************************************************************************
@@ -24,6 +28,8 @@ module.exports.log = {
   *                                                                          *
   ***************************************************************************/
 
-  // level: 'info'
+  level: "info",
+  prefixes: false,
+  custom: winston
 
 };
