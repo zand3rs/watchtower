@@ -1,0 +1,41 @@
+// Common
+// ----------------------------------------------------------------------------
+body{
+  background: $color-light-gray-1;
+}
+
+a{
+  color: $color-light-green-1;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include hoverStyles(){
+    color: $color-light-green-2;
+  }
+}
+
+
+// Wrappers
+// ----------------------------------------------------------------------------
+.wrap{
+  @include clearfix();
+  max-width: pxEm(1000);
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+
+// Visibility
+// ----------------------------------------------------------------------------
+.hide{
+  display: none !important;
+}
+
+
+// Scroll Helper Styles
+// ----------------------------------------------------------------------------
+.kill-scroll{
+  overflow: hidden;
+  height: 100%;
+}

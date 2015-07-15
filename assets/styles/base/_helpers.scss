@@ -1,0 +1,148 @@
+// Helpers
+// ----------------------------------------------------------------------------
+
+@mixin border-radius($radius: 4px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin box-shadow($content) {
+  -webkit-box-shadow: $content;
+     -moz-box-shadow: $content;
+      -ms-box-shadow: $content;
+          box-shadow: $content;
+}
+
+
+// Animation
+@mixin animate-it( $content ){
+  -webkit-animation: $content;
+     -moz-animation: $content;
+      -ms-animation: $content;
+          animation: $content;
+}
+
+
+// Hide Scrollbars
+@mixin hideScrollBars(){
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+
+// Linear Gradient
+@mixin linearGradient($color1, $color2, $firstStop:0%, $secondStop: 100%) {
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top,  $color1 $firstStop, $color2 $secondStop); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($firstStop,$color1), color-stop($secondStop,$color2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $color1 $firstStop,$color2 $secondStop); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $color1 $firstStop,$color2 $secondStop); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $color1 $firstStop,$color2 $secondStop); /* IE10+ */
+  background: linear-gradient(to bottom,  $color1 $firstStop,$color2 $secondStop); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 ); /* IE6-9 */
+}
+
+
+// Clearfix
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Strip Unit
+@function strip-unit( $num ) {
+  @return $num / ( $num * 0 + 1 );
+}
+
+
+// Px to Em
+@function pxEm( $px, $base-px: $base-pixel ) {
+  @return strip-unit( $px ) / strip-unit( $base-px ) * 1em;
+}
+
+
+// Hover / Active / Focus
+@mixin hoverStyles(){
+  &:active,
+  &:hover,
+  &:focus{
+    @content;
+  }
+}
+
+
+// Used for hiding text links
+@mixin hideText( $display : block ) {
+  text-align: left;
+  text-indent: -99999em;
+  display: $display;
+
+  // Added for the native Android browser
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+// Image URLs with version for cache-busting
+@function imgUrlVersion( $filename, $type: svg ){
+  $dir: $svg-dir;
+
+  @if( $type != svg ){
+    $dir: $img-dir;
+  }
+
+  @return $dir + $filename + "." + $type + "?v=" + $version;
+}
+
+
+// Media queries
+@mixin breakpoint($point) {
+
+  @if $point == small-screens-only{
+    @media only screen and ( max-width: $desktop - 1 ) { @content }
+  }
+
+  @else if $point == small-portrait-only{
+    @media only screen and ( max-width: $small-landscape - 1 ) { @content }
+  }
+
+  @else if $point == small-landscape-only{
+    @media only screen and ( min-width: $small-landscape ) and
+      ( max-width: $tablet-portrait - 1 ) { @content }
+  }
+
+  @else if $point == small-landscape-and-up {
+    @media only screen and ( min-width: $small-landscape ) { @content }
+  }
+
+  @else if $point == small-landscape-and-below {
+    @media only screen and ( max-width: $tablet-portrait - 1 ) { @content }
+  }
+
+  @else if $point == tablet-portrait-only {
+    @media only screen and ( min-width: $tablet-portrait ) and
+      ( max-width: $desktop - 1 ) {@content }
+  }
+
+  @else if $point == tablet-and-up {
+    @media only screen and ( min-width: $tablet-portrait ) { @content }
+  }
+
+  @else if $point == desktop-only{
+    @media only screen and ( min-width: $desktop ) { @content }
+  }
+}

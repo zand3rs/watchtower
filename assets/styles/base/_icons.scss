@@ -1,0 +1,11 @@
+// Icons and Logos
+// ----------------------------------------------------------------------------
+.watchtower-logo{
+  background: url(imgUrlVersion(watchtower-logo, svg)) no-repeat center;
+  background-size: contain;
+}
+
+.watchtower-logo-light{
+  background: url(imgUrlVersion(watchtower-logo-light, svg)) no-repeat center;
+  background-size: contain;
+}

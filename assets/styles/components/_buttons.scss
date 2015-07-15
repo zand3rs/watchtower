@@ -1,0 +1,34 @@
+// Buttons
+// ----------------------------------------------------------------------------
+%button {
+  display: inline-block;
+  outline: 0;
+  @include border-radius( $border-radius );
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  height: 40px;
+  text-align: center;
+  padding: pxEm(11) pxEm(20);
+  transition: all 0.3s ease;
+
+  &.loading {
+    @include hideText();
+    pointer-events: none;
+    display: inline-block;
+    transition: none !important;
+  }
+}
+
+.primary-button {
+  @extend %button;
+  border-color: $color-light-green-1;
+  color: $color-white;
+  background: $color-light-green-1;
+
+  @include hoverStyles() {
+    color: $color-white;
+    border-color: $color-light-green-2;
+    background: $color-light-green-2;
+  }
+}
