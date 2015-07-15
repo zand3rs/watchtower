@@ -17,6 +17,9 @@ module.exports = function(grunt) {
       files: [{
         src: require('../pipeline').jsFilesToInject,
         dest: '.tmp/public/js/main.js'
+      },{
+        src: require('../pipeline').cssFilesToInject,
+        dest: '.tmp/public/styles/main.css'
       }]
     }
   });

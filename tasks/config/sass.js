@@ -19,12 +19,6 @@ module.exports = function(grunt) {
         ext: '.css'
       }, {
         expand: true,
-        cwd: 'assets/styles/mobile',
-        src: ['*.scss', '*.sass'],
-        dest: '.tmp/public/styles/mobile',
-        ext: '.css'
-      }, {
-        expand: true,
         cwd: 'assets/linker/styles/',
         src: ['*.scss', '*.sass'],
         dest: '.tmp/public/linker/styles/',
