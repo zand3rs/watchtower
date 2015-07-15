@@ -1,0 +1,69 @@
+// Login Page
+// ----------------------------------------------------------------------------
+#login{
+  text-align: center;
+  padding-top: pxEm(50);
+
+  .watchtower-logo{
+    @include hideText();
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto pxEm(20);
+  }
+
+  .watchtower-title{
+    font-family: $header-font;
+    font-size: pxEm(30);
+    margin: 0 auto pxEm(20,30);
+    color: $color-dark-gray-2;
+    display: inline-block;
+
+    @include hoverStyles() {
+      color: $color-dark-gray-2;
+    }
+  }
+
+  .login-box{
+    padding: pxEm(20) 0;
+    margin: 0 auto pxEm(20);
+    border: 1px solid $color-light-gray-2;
+    border-left: 0;
+    border-right: 0;
+    width: 280px;
+  }
+
+  #login-button{
+    margin: 0 auto;
+  }
+
+  .forgot-password{
+    color: $color-dark-gray-1;
+    font-size: pxEm(14);
+
+    a{
+      font-weight: 700;
+    }
+  }
+}
+
+
+@include breakpoint(tablet-and-up) {
+  #login{
+    padding-top: pxEm(100);
+
+    .watchtower-logo{
+      width: 180px;
+      height: 180px;
+    }
+
+    .watchtower-title{
+      font-size: pxEm(36);
+    }
+
+    .login-box{
+      width: 320px;
+      padding: pxEm(24) 0;
+    }
+  }
+}
