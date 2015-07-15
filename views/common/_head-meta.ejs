@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<% if (typeof(meta) !== "undefined" && _.isArray(meta)) { %>
+  <% meta.forEach(function (item) { %>
+    <meta
+      <%- _.reduce(item, function(result, value, key) {
+        return (result += " "+key+"='"+_.escape(value)+"'");
+      }, "") %>
+    >
+  <%  }); %>
+<% } %>
