@@ -1,0 +1,33 @@
+// Applications Index
+// ----------------------------------------------------------------------------
+#applications-table{
+  .name{
+    width: 45%;
+  }
+
+  .logs{
+    width: 22%;
+  }
+
+  .status{
+    width: 15%;
+  }
+
+  .date{
+    width: 18%;
+  }
+
+  .list-body .status{
+    text-transform: uppercase;
+    font-size: pxEm(13);
+    letter-spacing: 2px;
+
+    &.active{
+      color: $color-active;
+    }
+
+    &.inactive{
+      color: $color-inactive;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<%- partial("../common/header") %>
+<%- partial("../common/nav", {currentSection: "applications"}) %>
+
+<%
+  var sampleData = [
+  {
+    name: "Event Emitter",
+    active: true,
+    logs: 100,
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    name: "Digital Whiteboard",
+    active: true,
+    logs: 50,
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    name: "Travel Platform",
+    active: false,
+    logs: 50,
+    date: "Mar 06, 2015 10:15 PM"
+  }
+];
+%>
+
+<div id="applications-index" class="page applications">
+  <div class="page-wrap wrap">
+    <div class="page-header">
+      <h1 class="page-title">Applications</h1>
+    </div>
+
+    <div id="applications-table" class="list">
+      <div class="list-header">
+        <div class="name">Name</div>
+        <div class="logs">Logs</div>
+        <div class="status">Status</div>
+        <div class="date">Last Activity</div>
+      </div>
+      <div class="list-body">
+        <% _.each(sampleData, function(data) { %>
+          <div class="item">
+            <div class="name"><a href="#"><%- data.name %></a></div>
+            <div class="logs <%- data.type %>"><%- data.logs %></div>
+            <div class="status <%- data.active ? "active" : "inactive" %>"><%- data.active ? "active" : "inactive" %></div>
+            <div class="date"><%- data.date %></div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

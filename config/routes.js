@@ -23,5 +23,6 @@
 module.exports.routes = {
   //-- Temporary Routes
   "GET /"               : {view: "staticpage/landing"},
-  "GET /dashboard"      : {view: "dashboard/index"}
+  "GET /dashboard"      : {view: "dashboard/index"},
+  "GET /applications"      : {view: "applications/index"}
 };
