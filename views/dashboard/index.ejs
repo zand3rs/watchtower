@@ -1,0 +1,118 @@
+<%- partial("../common/header") %>
+<%- partial("../common/nav", {currentSection: "dashboard"}) %>
+
+<script>
+  var dashboardGraphData = [
+  {
+    value: 100,
+    color:"#FF2D2D",
+    highlight: "#FF2D2D",
+    label: "Error"
+  },
+  {
+    value: 50,
+    color: "#F7C418",
+    highlight: "#F7C418",
+    label: "Warning"
+  },
+  {
+    value: 200,
+    color: "#1EBD47",
+    highlight: "#1EBD47",
+    label: "Info"
+  }];
+</script>
+
+<%
+  var sampleData = [
+  {
+    title: "Uncaught TypeError: undefined is not a function",
+    type: "error",
+    application: "Event Emitter",
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    title: "net::ERR_INTERNET_DISCONNECTED",
+    type: "warning",
+    application: "Digital Whiteboard",
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    application: "VideoPlayer Platform",
+    date: "Apr 06, 2015 10:15 PM"
+  },
+  {
+    title: "Uncaught TypeError: undefined is not a function",
+    type: "error",
+    application: "Event Emitter",
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    title: "net::ERR_INTERNET_DISCONNECTED",
+    type: "warning",
+    application: "Digital Whiteboard",
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    application: "VideoPlayer Platform",
+    date: "Apr 06, 2015 10:15 PM"
+  },
+  {
+    title: "Uncaught TypeError: undefined is not a function",
+    type: "error",
+    application: "Event Emitter",
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    title: "net::ERR_INTERNET_DISCONNECTED",
+    type: "warning",
+    application: "Digital Whiteboard",
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    application: "VideoPlayer Platform",
+    date: "Apr 06, 2015 10:15 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    application: "VideoPlayer Platform",
+    date: "Apr 06, 2015 10:15 PM"
+  }
+];
+%>
+
+<div id="dashboard" class="page dashboard">
+  <div class="page-wrap wrap">
+    <div class="page-header">
+      <h1 class="page-title">Latest Logs</h1>
+    </div>
+
+    <canvas id="dashboard-graph"></canvas>
+
+    <div id="dashboard-table" class="list">
+      <div class="list-header">
+        <div class="title">Title</div>
+        <div class="type">Type</div>
+        <div class="app">Application</div>
+        <div class="date">Date</div>
+      </div>
+      <div class="list-body">
+        <% _.each(sampleData, function(data) { %>
+          <div class="item">
+            <div class="title"><a href="#"><%- data.title %></a></div>
+            <div class="type <%- data.type %>"><%- data.type %></div>
+            <div class="app"><%- data.application %></div>
+            <div class="date"><%- data.date %></div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,45 @@
 // Icons and Logos
 // ----------------------------------------------------------------------------
-.watchtower-logo{
+.watchtower-logo {
   background: url(imgUrlVersion(watchtower-logo, svg)) no-repeat center;
   background-size: contain;
 }
 
-.watchtower-logo-light{
+.watchtower-logo-light {
   background: url(imgUrlVersion(watchtower-logo-light, svg)) no-repeat center;
   background-size: contain;
+}
+
+.ico-nav {
+  background: url(imgUrlVersion(nav, svg)) no-repeat;
+}
+
+.ico-graph {
+  background-position: center 100%;
+  width: 32px;
+	height: 18px;
+}
+
+.ico-app {
+  background-position: center 74.775%;
+  width: 32px;
+  height: 24px;
+}
+
+.ico-users {
+  background-position: center 49.401%;
+  width: 32px;
+	height: 23px;
+}
+
+.ico-settings {
+  background-position: center 24.324%;
+  width: 32px;
+	height: 24px;
+}
+
+.ico-logout {
+  background-position: center 0;
+  width: 32px;
+	height: 18px;
 }

@@ -1,4 +1,11 @@
 // No SVG Support
 // ----------------------------------------------------------------------------
 html.no-svg{
+  .watchtower-logo{
+    background-image: url(imgUrlVersion(watchtower-logo, png));
+  }
+
+  .watchtower-logo-light{
+    background-image: url(imgUrlVersion(watchtower-logo-light, png));
+  }
 }

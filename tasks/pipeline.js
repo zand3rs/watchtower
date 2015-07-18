@@ -24,6 +24,7 @@ var cssFilesToInject = [
 var jsFilesToInject = [
   'js/dependencies/jquery.js',
   'js/lib/**/*.js',
+  'js/app.js'
 ];
 
 

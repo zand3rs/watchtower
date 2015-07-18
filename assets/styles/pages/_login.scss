@@ -43,6 +43,11 @@
 
     a{
       font-weight: 700;
+      color: $color-light-green-1;
+
+      @include hoverStyles(){
+        color: $color-light-green-2;
+      }
     }
   }
 }

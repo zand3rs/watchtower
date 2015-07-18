@@ -1,0 +1,38 @@
+// Lists (tables)
+// ----------------------------------------------------------------------------
+.list{
+  .list-header{
+    @include clearfix();
+    border-bottom: 3px solid $color-light-gray-2;
+
+    & > div{
+      float: left;
+      font-size: pxEm(15);
+      letter-spacing: 2px;
+      padding: 1em;
+      text-transform: uppercase;
+    }
+  }
+
+  .list-body{
+    .item{
+      @include clearfix();
+      padding: pxEm(15) 0;
+      color: $color-dark-gray-1;
+
+      &:nth-child(odd){
+        background: rgba(233,233,233,0.3);
+      }
+
+      a{
+        color: $color-dark-gray-1;
+      }
+    }
+
+    .item > div{
+      float: left;
+      font-size: pxEm(14);
+      padding: 0 pxEm(15,14);
+    }
+  }
+}

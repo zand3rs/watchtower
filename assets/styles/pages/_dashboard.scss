@@ -1,0 +1,43 @@
+// Dasboard Page
+// ----------------------------------------------------------------------------
+#dashboard-graph{
+  width: 100%;
+  height: 300px;
+  margin: pxEm(24) auto;
+}
+
+#dashboard-table{
+  .title{
+    width: 45%;
+  }
+
+  .type{
+    width: 15%;
+  }
+
+  .app{
+    width: 22%;
+  }
+
+  .date{
+    width: 18%;
+  }
+
+  .list-body .type{
+    text-transform: uppercase;
+    font-size: pxEm(13);
+    letter-spacing: 2px;
+
+    &.error{
+      color: $color-error;
+    }
+
+    &.warning{
+      color: $color-warning;
+    }
+
+    &.info{
+      color: $color-info;
+    }
+  }
+}

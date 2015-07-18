@@ -1,0 +1,25 @@
+// Site Header
+// ----------------------------------------------------------------------------
+#site-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: pxEm(30);
+  height: pxEm(60,30);
+  line-height: pxEm(60,30);
+  background: $color-dark-gray-2;
+  text-align: center;
+  z-index: 12;
+
+  a{
+    color: $color-white;
+    font-family: $header-font;
+    display: inline-block;
+    height: pxEm(60,30);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 45px;
+    padding-left: pxEm(55, 30);
+  }
+}

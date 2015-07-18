@@ -1,0 +1,24 @@
+<% if( typeof currentSection === "undefined" ){ currentSection = "dashboard" } %>
+
+<div id="site-nav">
+  <div class="nav-main">
+    <ul>
+      <li class="<%- currentSection == "dashboard" ? "current-section" : "" %>">
+        <a href="/dashboard"><span class="ico-nav ico-graph"></span><span>Dashboard</span></a>
+      </li>
+      <li class="<%- currentSection == "applications" ? "current-section" : "" %>">
+        <a href="/applications"><span class="ico-nav ico-app"></span><span>Applications</span></a>
+      </li>
+      <li class="<%- currentSection == "users" ? "current-section" : "" %>">
+        <a href="/users"><span class="ico-nav ico-users"></span><span>Users</span></a>
+      </li>
+      <li class="<%- currentSection == "settings" ? "current-section" : "" %>">
+        <a href="/settings"><span class="ico-nav ico-settings"></span><span>Settings</span></a>
+      </li>
+      <li class="logout">
+        <a href="/logout"><span class="ico-nav ico-logout"></span><span>Sign out</span></a>
+      </li>
+    </ul>
+  </div>
+  <div class="nav-overlay"></div>
+</div>

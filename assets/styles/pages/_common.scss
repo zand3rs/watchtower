@@ -1,41 +1,62 @@
 // Common
 // ----------------------------------------------------------------------------
-body{
+body {
   background: $color-light-gray-1;
 }
 
-a{
-  color: $color-light-green-1;
+a {
   text-decoration: none;
   cursor: pointer;
-
-  @include hoverStyles(){
-    color: $color-light-green-2;
-  }
 }
 
 
 // Wrappers
 // ----------------------------------------------------------------------------
-.wrap{
+.wrap {
   @include clearfix();
-  max-width: pxEm(1000);
+  max-width: pxEm(1100);
   position: relative;
   margin: auto;
   width: 100%;
 }
 
 
+// Page
+// ----------------------------------------------------------------------------
+.page{
+  padding-top: pxEm(60);
+}
+
+.page-wrap{
+  padding: pxEm(20) pxEm(24);
+}
+
+.page-header{
+  font-size: pxEm(24);
+  line-height: pxEm(30,24);
+  font-family: $header-font;
+  border-bottom: 1px solid $color-light-gray-2;
+  padding-bottom: pxEm(10,24);
+}
+
+
 // Visibility
 // ----------------------------------------------------------------------------
-.hide{
+.hide {
   display: none !important;
 }
 
 
 // Scroll Helper Styles
 // ----------------------------------------------------------------------------
-.kill-scroll{
+.kill-scroll {
   overflow: hidden;
   height: 100%;
+}
+
+
+@include breakpoint(desktop-only) {
+  .page{
+    padding-left: 220px;
+  }
 }
