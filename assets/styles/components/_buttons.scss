@@ -32,3 +32,15 @@
     background: $color-light-green-2;
   }
 }
+
+.outline-button {
+  @extend %button;
+  border-color: $color-light-green-1;
+  color: $color-light-green-1;
+
+  @include hoverStyles() {
+    color: $color-white;
+    border-color: $color-light-green-2;
+    background: $color-light-green-2;
+  }
+}

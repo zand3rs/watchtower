@@ -32,11 +32,21 @@ a {
 }
 
 .page-header{
-  font-size: pxEm(24);
-  line-height: pxEm(30,24);
-  font-family: $header-font;
   border-bottom: 1px solid $color-light-gray-2;
   padding-bottom: pxEm(10,24);
+  @include clearfix();
+
+  .page-title{
+    font-size: pxEm(24);
+    line-height: pxEm(30,24);
+    font-family: $header-font;
+    font-weight: 600;
+    float: left;
+  }
+
+  .header-actions{
+    float: right;
+  }
 }
 
 

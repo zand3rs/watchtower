@@ -1,5 +1,45 @@
 // Lists (tables)
 // ----------------------------------------------------------------------------
+.filters{
+  @include clearfix();
+  background: rgba(233, 233, 233, 0.3);
+  padding: pxEm(10);
+  margin-bottom: 2em;
+
+  label{
+    text-transform: uppercase;
+    color: $color-dark-gray-1;
+    letter-spacing: 2px;
+    font-size: pxEm(14);
+    float: left;
+    height: 38px;
+    line-height: 38px;
+    margin-right: 1em;
+  }
+
+  .field{
+    float: left;
+    @include border-radius($border-radius);
+    border: 1px solid $color-light-gray-2;
+    height: 38px;
+    padding: 0 pxEm(7);
+    color: $color-dark-gray-1;
+    margin-right: 1em;
+    outline: 0;
+  }
+}
+
+.pagination{
+  float: right;
+
+  input.field{
+    width: 50px;
+    float: none;
+    vertical-align: middle;
+    margin-right: 0;
+  }
+}
+
 .list{
   .list-header{
     @include clearfix();
