@@ -1,0 +1,32 @@
+.error-page{
+  padding-top: 2em;
+  text-align: center;
+  color: $color-white;
+  background: $color-black;
+  min-height: 100%;
+
+  .error-title{
+    padding-top: 250px;
+    font-size: pxEm(100);
+    font-weight: 600;
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+  }
+
+  p{
+    text-transform: uppercase;
+  }
+}
+
+#error-500 .error-title{
+  background-image: url(imgUrlVersion(500, svg));
+}
+
+#error-404 .error-title{
+  background-image: url(imgUrlVersion(404, svg));
+}
+
+#error-403 .error-title{
+  background-image: url(imgUrlVersion(403, svg));
+}

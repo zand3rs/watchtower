@@ -8,4 +8,16 @@ html.no-svg{
   .watchtower-logo-light{
     background-image: url(imgUrlVersion(watchtower-light, png));
   }
+
+  #error-500 .error-title{
+    background-image: url(imgUrlVersion(500, png));
+  }
+
+  #error-404 .error-title{
+    background-image: url(imgUrlVersion(404, png));
+  }
+
+  #error-403 .error-title{
+    background-image: url(imgUrlVersion(403, png));
+  }
 }

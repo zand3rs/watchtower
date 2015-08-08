@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Internal Server Error</title>
-
-    <%- partial("common/_head-meta") %>
-
-    <link rel="icon" href="<%- Util.toAssetsUrl('/favicon.ico') %>">
-    <link rel="canonical" href="http://<%- sails.config.host %>">
-
-    <script type="text/javascript">
-      // Check if SVG is supported
-      if ( document.implementation.hasFeature(
-            "http://www.w3.org/TR/SVG11/feature#Image", "1.1" )){
-        document.documentElement.className += " svg";
-      }
-      else{
-        document.documentElement.className += " no-svg";
-      }
-    </script>
-
-    <link rel="stylesheet" href="<%- Util.toAssetsUrl('/styles/main.css') %>">
-  </head>
-  <body>
-
-  </body>
-</html>
+<div id="error-500" class="error-page">
+  <div class="error-title">500</div>
+  <p>Ah! You discovered a secret route!</p>
+</div>
