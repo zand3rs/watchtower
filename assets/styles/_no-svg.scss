@@ -2,10 +2,10 @@
 // ----------------------------------------------------------------------------
 html.no-svg{
   .watchtower-logo{
-    background-image: url(imgUrlVersion(watchtower-logo, png));
+    background-image: url(imgUrlVersion(watchtower, png));
   }
 
   .watchtower-logo-light{
-    background-image: url(imgUrlVersion(watchtower-logo-light, png));
+    background-image: url(imgUrlVersion(watchtower-light, png));
   }
 }
