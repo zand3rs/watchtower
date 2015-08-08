@@ -75,7 +75,7 @@
       <div class="list-body">
         <% _.each(sampleData, function(data) { %>
           <div class="item">
-            <div class="name"><a href="#"><img src="<%- Util.toAssetsUrl('images/default-avatar.png') %>" class="avatar" /></a><a href="#"><%- data.name %></a></div>
+            <div class="name"><a href="#"><img src="<%- Util.toAssetsUrl('/images/default-avatar.png') %>" class="avatar" /></a><a href="#"><%- data.name %></a></div>
             <div class="email"><a href="mailto:<%- data.email %>"><%- data.email %></a></div>
             <div class="status <%- data.active ? "active" : "inactive" %>"><%- data.active ? "active" : "inactive" %></div>
             <div class="date"><%- data.date %></div>

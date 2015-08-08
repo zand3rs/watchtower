@@ -25,5 +25,6 @@ module.exports.routes = {
   "GET /"               : {view: "staticpage/landing"},
   "GET /dashboard"      : {view: "dashboard/index"},
   "GET /applications"   : {view: "applications/index"},
+  "GET /applications/1" : {view: "applications/show"},
   "GET /users"          : {view: "users/index"}
 };

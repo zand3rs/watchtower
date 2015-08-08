@@ -1,0 +1,100 @@
+<%- partial("../common/header") %>
+<%- partial("../common/nav", {currentSection: "applications"}) %>
+
+<%
+  var sampleData = [
+  {
+    title: "Uncaught TypeError: undefined is not a function",
+    type: "error",
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    title: "net::ERR_INTERNET_DISCONNECTED",
+    type: "warning",
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    date: "Apr 06, 2015 10:15 PM"
+  },
+  {
+    title: "Uncaught TypeError: undefined is not a function",
+    type: "error",
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    title: "net::ERR_INTERNET_DISCONNECTED",
+    type: "warning",
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    date: "Apr 06, 2015 10:15 PM"
+  },
+  {
+    title: "Uncaught TypeError: undefined is not a function",
+    type: "error",
+    date: "Apr 07, 2015 04:20 AM"
+  },
+  {
+    title: "net::ERR_INTERNET_DISCONNECTED",
+    type: "warning",
+    date: "Apr 06, 2015 02:30 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    date: "Apr 06, 2015 10:15 PM"
+  },
+  {
+    title: "info::getPlaylist from cache",
+    type: "info",
+    date: "Apr 06, 2015 10:15 PM"
+  }
+];
+%>
+
+<div id="applications-show" class="page applications">
+  <div class="page-wrap wrap">
+    <div class="page-header">
+      <h1 class="page-title"><img src="<%- Util.toAssetsUrl('/images/default-app-icon.png') %>" />Penguin</h1>
+      <div class="header-actions">
+        <a href="#" class="primary-button">Edit</a>
+      </div>
+    </div>
+
+    <div class="filters">
+      <input type="text" placeholder="Keyword" class="field" />
+      <select class="field">
+        <option>Type</option>
+        <option value="info">Info</option>
+        <option value="warning">Warning</option>
+        <option value="error">Error</option>
+      </select>
+      <a href="#" class="outline-button">Apply Filters</a>
+
+      <div class="pagination">
+        <input type="text" class="field" value="1" /> of 1
+      </div>
+    </div>
+
+    <div id="logs-table" class="list">
+      <div class="list-header">
+        <div class="title">Title</div>
+        <div class="type">Type</div>
+        <div class="date">Date</div>
+      </div>
+      <div class="list-body">
+        <% _.each(sampleData, function(data) { %>
+          <div class="item">
+            <div class="title"><a href="#"><%- data.title %></a></div>
+            <div class="type <%- data.type %>"><%- data.type %></div>
+            <div class="date"><%- data.date %></div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</div>

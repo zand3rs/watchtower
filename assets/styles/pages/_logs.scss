@@ -1,0 +1,31 @@
+#logs-table{
+  .title{
+    width: 60%;
+  }
+
+  .type{
+    width: 15%;
+  }
+
+  .date{
+    width: 25%;
+  }
+
+  .list-body .type{
+    text-transform: uppercase;
+    font-size: pxEm(13);
+    letter-spacing: 2px;
+
+    &.error{
+      color: $color-error;
+    }
+
+    &.warning{
+      color: $color-warning;
+    }
+
+    &.info{
+      color: $color-info;
+    }
+  }
+}

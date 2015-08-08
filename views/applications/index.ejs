@@ -4,18 +4,21 @@
 <%
   var sampleData = [
   {
+    id: 1,
     name: "Penguin",
     active: true,
     logs: 100,
     date: "Apr 07, 2015 04:20 AM"
   },
   {
+    id: 1,
     name: "Pigeon",
     active: true,
     logs: 50,
     date: "Apr 06, 2015 02:30 PM"
   },
   {
+    id: 1,
     name: "Amaterasu",
     active: false,
     logs: 50,
@@ -57,7 +60,7 @@
       <div class="list-body">
         <% _.each(sampleData, function(data) { %>
           <div class="item">
-            <div class="name"><a href="#"><img src="<%- Util.toAssetsUrl('images/default-app-icon.png') %>" class="icon" /></a><a href="#"><%- data.name %></a></div>
+            <div class="name"><a href="/applications/<%- data.id %>"><img src="<%- Util.toAssetsUrl('/images/default-app-icon.png') %>" class="icon" /></a><a href="/applications/<%- data.id %>"><%- data.name %></a></div>
             <div class="logs <%- data.type %>"><%- data.logs %></div>
             <div class="status <%- data.active ? "active" : "inactive" %>"><%- data.active ? "active" : "inactive" %></div>
             <div class="date"><%- data.date %></div>
