@@ -1,40 +1,58 @@
 <%- partial("../common/header") %>
-<%- partial("../common/nav", {currentSection: "applications"}) %>
+<%- partial("../common/nav", {currentSection: "users"}) %>
 
 <%
   var sampleData = [
   {
-    name: "Penguin",
+    name: "Alexander Magtipon",
     active: true,
-    logs: 100,
+    email: "abc@gmail.com",
     date: "Apr 07, 2015 04:20 AM"
   },
   {
-    name: "Pigeon",
+    name: "Alexandrei Santos",
+    active: false,
+    email: "abc@gmail.com",
+    date: "Mar 06, 2015 10:15 PM"
+  },
+  {
+    name: "Jayvic San Antonio",
+    active: false,
+    email: "abc@gmail.com",
+    date: "Mar 06, 2015 10:15 PM"
+  },
+  {
+    name: "Leslie James",
     active: true,
-    logs: 50,
+    email: "abc@gmail.com",
     date: "Apr 06, 2015 02:30 PM"
   },
   {
-    name: "Amaterasu",
+    name: "Makmak Garcia",
     active: false,
-    logs: 50,
+    email: "abc@gmail.com",
+    date: "Mar 06, 2015 10:15 PM"
+  },
+  {
+    name: "Yuni Olaires",
+    active: false,
+    email: "abc@gmail.com",
     date: "Mar 06, 2015 10:15 PM"
   }
 ];
 %>
 
-<div id="applications-index" class="page applications">
+<div id="users-index" class="page users">
   <div class="page-wrap wrap">
     <div class="page-header">
-      <h1 class="page-title">Applications</h1>
+      <h1 class="page-title">Users</h1>
       <div class="header-actions">
         <a href="#" class="primary-button">Add New</a>
       </div>
     </div>
 
     <div class="filters">
-      <input type="text" placeholder="Keyword" class="field" />
+      <input type="text" placeholder="User" class="field" />
       <select class="field">
         <option>Status</option>
         <option value="active">Active</option>
@@ -47,18 +65,18 @@
       </div>
     </div>
 
-    <div id="applications-table" class="list">
+    <div id="users-table" class="list">
       <div class="list-header">
         <div class="name">Name</div>
-        <div class="logs">Logs</div>
+        <div class="email">Email</div>
         <div class="status">Status</div>
         <div class="date">Last Activity</div>
       </div>
       <div class="list-body">
         <% _.each(sampleData, function(data) { %>
           <div class="item">
-            <div class="name"><a href="#"><img src="<%- Util.toAssetsUrl('images/default-app-icon.png') %>" class="icon" /></a><a href="#"><%- data.name %></a></div>
-            <div class="logs <%- data.type %>"><%- data.logs %></div>
+            <div class="name"><a href="#"><img src="<%- Util.toAssetsUrl('images/default-avatar.png') %>" class="avatar" /></a><a href="#"><%- data.name %></a></div>
+            <div class="email"><a href="mailto:<%- data.email %>"><%- data.email %></a></div>
             <div class="status <%- data.active ? "active" : "inactive" %>"><%- data.active ? "active" : "inactive" %></div>
             <div class="date"><%- data.date %></div>
           </div>

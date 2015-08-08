@@ -1,12 +1,12 @@
-// Applications Index
+// Users Index
 // ----------------------------------------------------------------------------
-#applications-table{
+#users-table{
   .name{
-    width: 45%;
+    width: 40%;
   }
 
-  .logs{
-    width: 22%;
+  .email{
+    width: 25%;
   }
 
   .status{
@@ -14,7 +14,7 @@
   }
 
   .date{
-    width: 18%;
+    width: 20%;
   }
 
   .list-body{
