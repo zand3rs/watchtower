@@ -1,0 +1,87 @@
+form{
+  input[type="text"],
+  textarea,
+  select,
+  input[type="checkbox"]{
+    color: $color-dark-gray-3;
+    border: 1px solid $color-light-gray-2;
+    font-family: $base-font;
+  }
+
+  .fieldset{
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $color-light-gray-2;
+  }
+
+  .field{
+    @include clearfix();
+    padding: pxEm(10) 0;
+    margin: 0 pxEm(10);
+
+    label{
+      float: left;
+      padding: pxEm(7) 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: pxEm(14);
+      color: $color-dark-gray-3;
+      width: 35%;
+    }
+
+    .checkbox-label{
+      width: auto !important;
+      margin: 0 0.5em;
+      text-transform: none;
+      letter-spacing: 0;
+      padding: 0;
+    }
+  }
+
+  .value{
+    float: right;
+    padding: pxEm(7);
+    height: 36px;
+    background: $color-white;
+    color: $color-dark-gray-1;
+    @include border-radius($border-radius);
+    width: 65%;
+
+    &.full{
+      width: 100%;
+    }
+
+    input[type="checkbox"]{
+      float: left;
+    }
+
+    &.disabled{
+      color: $color-dark-gray-1;
+      opacity: 1;
+      height: auto;
+      padding-left: 0;
+    }
+  }
+
+  input[type="file"].value,
+  div.value {
+    padding-left: 0;
+  }
+
+  .media-upload{
+    input[type="file"]{
+      vertical-align: middle;
+      width: 240px;
+      display: inline-block;
+    }
+
+    .selected-image{
+      height: 30px;
+      width: auto;
+      margin-right: pxEm(10);
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+
+}

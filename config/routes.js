@@ -22,9 +22,13 @@
 
 module.exports.routes = {
   //-- Temporary Routes
-  "GET /"               : {view: "staticpage/landing"},
-  "GET /dashboard"      : {view: "dashboard/index"},
-  "GET /applications"   : {view: "applications/index"},
-  "GET /applications/1" : {view: "applications/show"},
-  "GET /users"          : {view: "users/index"}
+  "GET /"           : {view: "staticpage/landing"},
+  "GET /dashboard"  : {view: "dashboard/index"},
+
+  "GET /applications"         : {view: "applications/index"},
+  "GET /applications/1"       : {view: "applications/show"},
+  "GET /applications/new"     : {view: "applications/new"},
+  "GET /applications/1/edit"  : {view: "applications/edit"},
+
+  "GET /users"  : {view: "users/index"}
 };
